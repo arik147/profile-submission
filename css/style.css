@@ -1,0 +1,300 @@
+/* ----- Font ----- */
+    @import url('https://fonts.googleapis.com/css2?family=Inter&family=Nunito&family=Poppins&display=swap');
+
+  /* 
+    font-family: 'Inter', sans-serif;
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Poppins', sans-serif;
+*/
+
+:root {
+    --green:#27ae60;
+    --darkblue:#192a56;
+    --box-shadow:0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+*, body {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border:none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* ----- Styling each Section ----- */
+section {
+    min-height: 100vh;
+    padding: 2rem 5%;
+}
+
+
+/* ----- Landing Page ----- */
+.landing-page {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("https://storage.googleapis.com/intrepid-pride-385614-submission-profile/image-5.JPG");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* padding-left: 15%; */
+}
+
+.landing-page a{
+    text-decoration: none;
+    color: white;
+    font-size: 64px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+}
+  
+.landing-page h1{
+    color: white;
+    font-size: 52px;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+}
+
+
+.landing-page h3{
+    color: white;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.landing-page h2 {
+    color: white;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+
+/* ----- Styling heading each Section ----- */
+.sub-heading {
+    text-align: center;
+    color:var(--green);
+    font-size: 20px;
+    padding-top: 1rem;
+}
+
+.heading {
+    text-align: center;
+    color: var(--darkblue);
+    font-size: 30px;
+    padding-bottom: 1rem;
+}
+
+/* ----- Profile ----- */
+
+.profile{
+    color: var(--darkblue);
+}
+
+.profile-heading .name {
+    color: var(--green);
+    text-align: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.profile > .content {
+    display: flex;
+    gap: 50px;
+}
+
+/* ----- Profile Image ----- */
+.aside-profile{
+    width: 50rem;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image img{
+    align-items: center;
+    max-width: 240px;
+    height: auto;
+    border-radius: 2%;
+    transition: all 0.3s ease-in-out;
+}
+
+.profile-image img:last-child {
+  display: none;
+}
+
+.profile-image:hover img:last-child {
+  display: block; 
+}
+
+.profile-image:hover img:first-child {
+  display: none;  
+}
+
+
+/* ----- social media ------- */
+.social-media {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content:space-around;
+    color: var(--darkblue);
+    gap: 16px;
+}
+
+.social-media i {
+  font-size: 1.45em; /* Change this value as needed */
+  color: var(--darkblue);
+}
+
+.table i{
+    font-size: 1.2em; /* Change this value as needed */
+    color: var(--darkblue);
+}
+
+.fa:hover {
+    transform: scale(1.25);
+    opacity: 0.9;
+}
+
+
+/* ----- Footer ----- */
+.footer .credit {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--darkblue);
+    text-align: center;
+    font-size: 14px;
+    color:white;
+    padding: 10px;
+}
+
+.footer .credit a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* ----- Media Queries ----- */
+@media (max-width:1024px) {
+
+    .landing-page {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .profile > .content {
+        gap: 30px;
+    }
+
+    .content-article {
+        font-size: 16px;
+    }
+
+    .aside-profile{
+        width: 80rem;
+    }
+
+    .social-media {
+        gap: 10px;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .image-container {
+        flex-basis: 47%;
+    }
+
+    .profile > .content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: center;
+    }
+
+    .aside-profile{
+        width: 20rem;
+    }
+
+}
+
+@media (max-width:450px) {
+
+    .landing-page a {
+        font-size: smaller;
+    }
+    
+    .image-container {
+        flex-basis: 100%;
+    }
+
+    .profile > .content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .aside-profile {
+        width: 18rem;
+    }
+}
+
+.reveal {
+  position: relative;
+  opacity: 0;
+}
+
+.reveal.active {
+  opacity: 1;
+}
+.active.fade-bottom {
+  animation: fade-bottom 1s ease-in;
+}
+.active.fade-left {
+  animation: fade-left 1s ease-in;
+}
+.active.fade-right {
+  animation: fade-right 1s ease-in;
+}
+@keyframes fade-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fade-left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
